@@ -111,7 +111,77 @@ cp -ar $AUGUSTUS/config $HOME/augustus_config
 
 ## Step 4 - Setup BRAKER and run 
 
-**THIS STEP WILL TAKE A LONG TIME** Braker is _not_ a quick program. We will discuss why this is in class. 
+**THIS STEP WILL TAKE A LONG TIME** Braker is _not_ a quick program. This process will take **AT LEAST 10 HOURS!**. The larger your genome the longer it will take.
+
+### Step 4a - Copy slurm script
+
+Top copy the slurm script into your lab_4 directory. 
+
+```bash
+cp /projects/class/binf3101_001/braker.slurm .
+```
+
+
+### Step 4b - Edit the slurm script
+
+There is one section of the script you need to edit
+
+![image](https://github.com/BINF-3101/Lab4_Genome_Annotation/assets/47755288/3479ccde-e16c-47f9-8423-8a47e9f80c44)
+
+
+In the line where it says SRR="1234556" you should change it to your SRR number. 
+
+
+### Step 4c - Submit the slurm script
+
+Before submitting your braker script make sure you have the following files in your directory 
+
+- SRR12345-contigs.v2.fa.masked
+- braker.slurm
+
+If those two items are in your directory you can submit the script
+
+```bash
+sbatch braker.slurm
+```
+
+### Step 4d -  Check on your annotation
+
+This will take a long time to run, so let's look at what's happening
+
+
+**Check to see if the program is running**
+
+```bash
+squeue -u username
+```
+
+![image](https://github.com/BINF-3101/Lab4_Genome_Annotation/assets/47755288/ea7927d8-c920-4d5e-ab6f-757932cae2f8)
+
+You should see your job running with the amount of time it's been running. 
+
+
+**Look at the log file**
+
+The braker program will create a new folder called **braker**
+
+**_NOTE!_** If you need to **re-run braker** you will need to delete this folder. Ask our TA our myself if you run into this issue. 
+
+To look at your log file 
+
+```bash
+head braker/braker.log
+```
+
+This is where all of the 
+
+
+
+
+
+
+
+
 
 
 
