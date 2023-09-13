@@ -35,7 +35,7 @@ In the lab today we will be annotating our genomes. Annotation is the process of
 
 Genes within genomes can be distributed in very different ways. Some genomes have lots of genes that are closely packed. The human genome, conversely, has long stretches of DNA that do not contain genes. 
 
-Yeast genomes are typically compact and the genes contain few introns. We need to **train our model** to know what type of genome we have. We will use a database of known yeast proteins to train our mdeol
+Yeast genomes are typically compact and the genes contain few introns. We need to **train our model** to know what type of genome we have. We will use a database of known yeast proteins to train our model
 
 
 
@@ -114,7 +114,7 @@ module load bamtools/2.5.1 blast/2.11.0+ augustus/3.4.0 diamond braker/2.1.5
 
 ### Step 3b - Setup GeneMark
 
-BRAKER calls a program called genemark. We need to tell genemark where to look for it's configuration files
+BRAKER calls a program called genemark. We need to tell genemark where to look for its configuration files
 
 ```bash
 #go to your home directory
