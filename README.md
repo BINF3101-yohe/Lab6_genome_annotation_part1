@@ -1,5 +1,20 @@
 # Lab4_Genome_Annotation
 
+## Outline
+
+[Introduction](#introduction)
+[Step 1](#step-1-set-up-your-lab-4-folder)
+[Step 2](#step-2-mask-our-genome)
+[Lab Question 1](#lq-1)
+[Lab Question 2](#lq-2)
+[Step 3](#step-3---setup-for-braker)
+[Step 4](#step-4---setup-braker-and-run)
+[Lab Quesiton 3](#lq-3)
+[Step 5](#step-5---preparing-for-the-next-lab)
+[Lab Quesiton 3](#lq-4)
+[Lab Quesiton 3](#lq-5)
+[Lab Quesiton 3](#lq-6)
+
 ## Introduction
 
 In the lab today we will be annotating our genomes. Annotation is the process of finding the genes. The software we will run, called BRAKER, attempts to identify the beginning and end of genes. It will also identify exons and introns within the gene. 
