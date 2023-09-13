@@ -173,7 +173,41 @@ To look at your log file
 head braker/braker.log
 ```
 
-This is where all of the 
+This is where braker will report its progress. 
+
+# LQ 3 
+
+After your run is complete, what does the **end of your log file look like?** You can upload a screenshot, copy the end of the file, or send the entire file. 
+
+If your assembly has _not been completed_ by the lab due date, upload the last lines in your file. 
+
+
+## Step 5 - Preparing for the next lab
+
+Our analyses will run for a long time. To prepare us for next lab let's answer some questions about our output files. 
+
+
+### Step 5a - Braker output files
+
+The version of braker we are using only outputs gff or gff3 files. We have it set to generate our gff3 files and it will be named **"braker.gff3**
+
+Take a look at this example of gff3 format https://learn.gencore.bio.nyu.edu/ngs-file-formats/gff3-format/ 
+
+# LQ 4 
+How many required fields are there in gff3 format?
+
+# LQ 5 
+What is the default or blank value used in GFF3 format?
+
+# LQ 6
+We will need to extract DNA and amino acid sequences from our genome using our gff3 file. We will be using this program: getfasta
+Look at the documentation for getfasta https://bedtools.readthedocs.io/en/latest/content/tools/getfasta.html
+
+Write and report the command you would use to extract all our DNA sequences from the genome. 
+
+
+
+
 
 
 
