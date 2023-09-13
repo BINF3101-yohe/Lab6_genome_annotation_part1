@@ -20,11 +20,11 @@
 
 [Step 5](#step-5---preparing-for-the-next-lab)
 
-[Lab Quesiton 3](#lq-4)
+[Lab Quesiton 4](#lq-4)
 
-[Lab Quesiton 3](#lq-5)
+[Lab Quesiton 5](#lq-5)
 
-[Lab Quesiton 3](#lq-6)
+[Lab Quesiton 6](#lq-6)
 
 
 ## Introduction
