@@ -165,7 +165,7 @@ cp /projects/class/binf3101_001/braker.slurm .
 
 There is one section of the script you need to edit
 
-![image](https://github.com/BINF-3101/Lab4_Genome_Annotation/assets/47755288/3479ccde-e16c-47f9-8423-8a47e9f80c44)
+![image]https://github.com/user-attachments/assets/c7a3bd20-b4a1-4664-9c36-901a077e429d)
 
 
 In the line where it says SRR="1234556" you should change it to your SRR number. 
