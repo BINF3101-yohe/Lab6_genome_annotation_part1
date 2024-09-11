@@ -50,7 +50,7 @@ mkdir lab_4
 Now we want to copy our final file from lab_3 into the lab_4 folder 
 
 ```bash
-cp lab_3/SRR**123**-contigs.v2.fa lab_4/.
+cp lab_3/SRRXXXXXX-contigs.v2.fa lab_4/.
 ```
 
 As a reminder the ```.``` command means "here". So ```lab_4/.``` means "here in the lab 4 folder. 
@@ -74,20 +74,29 @@ module load repeatmasker
 We want to tell repeatmasker what type of species we are using so that it can look for the right type of repeats
 
 ```bash
-RepeatMasker -species saccharomycotina SRR**NUM**-contigs.v2.fa
+RepeatMasker -species saccharomycotina SRRXXXXXX-contigs.v2.fa
 ```
 
 This will run for a while. Answer the question below while it is running
 
-# LQ 1
+# LQ 1a
 
 **Repeatmasker looks for insertion elements from a common laboratory bacteria. What is this bacteria?**
 
-Our new masked genome from this pipeline will be **SRR1234-contigs.v2.masked**
+# LQ 1b
 
-The results from our masking will be in the file **SRR1234-contigs.v2.fa.out**
+**Check out the link below and report what type of transposable elements you suspect are found in our Saccharomycotina yeasts.**
+https://www.nature.com/scitable/topicpage/transposons-the-jumping-genes-518/ 
 
-Take a look at your output file (SRR1234-contigs.v2.fa.out) using head, cat or less command
+
+&nbsp;
+&nbsp;
+
+Our new masked genome from this pipeline will be **SRRXXXXXX-contigs.v2.masked**
+
+The results from our masking will be in the file **SRRXXXXXX-contigs.v2.fa.out**
+
+Take a look at your output file (SRRXXXXXX-contigs.v2.fa.out) using head, cat or less command
 
 # LQ 2
 
@@ -109,7 +118,7 @@ To clear your terminal you can close it and open a new one or use the module pur
 module purge
 
 #load braker and other dependencies
-module load bamtools/2.5.1 blast/2.11.0+ augustus/3.4.0 diamond braker/2.1.5
+module load braker/3.0.7
 ```
 
 ### Step 3b - Setup GeneMark
@@ -120,7 +129,7 @@ BRAKER calls a program called genemark. We need to tell genemark where to look f
 #go to your home directory
 cd
 #enter this command exactly
-cp $GM_HOME/gm_key $HOME/.gm_key
+cp /projects/class/binf3101_001/.gm_key $HOME/.gm_key
 ```
 
 ### Step 3c - Setup Augustus
@@ -145,6 +154,9 @@ cp -ar $AUGUSTUS/config $HOME/augustus_config
 Top copy the slurm script into your lab_4 directory. 
 
 ```bash
+
+cd lab_4
+
 cp /projects/class/binf3101_001/braker.slurm .
 ```
 
