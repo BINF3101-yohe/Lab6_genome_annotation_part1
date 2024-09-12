@@ -69,6 +69,14 @@ We will be using a software called repeatmasker which is already installed on th
 module load repeatmasker
 ```
 
+Now we need to make sure that we have the right database
+
+```
+cd .
+cp -r /projects/class/binf3101_001/.RepeatMaskerCache/ .
+cd lab_4
+```
+
 ### Step 2b: Run repeatmasker
 
 We want to tell repeatmasker what type of species we are using so that it can look for the right type of repeats
