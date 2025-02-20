@@ -44,16 +44,17 @@ Yeast genomes are typically compact and the genes contain few introns. We need t
 From your home directory (/users/username) create a new folder called lab_4
 
 ```bash
-mkdir lab_4
+mkdir lab_6
 ```
 
 Now we want to copy our final file from lab_3 into the lab_4 folder 
 
 ```bash
-cp lab_3/SRRXXXXXX-contigs.v2.fa lab_4/.
+cp lab_4/SRRXXXXXX-contigs.v2.fa lab_6/.
 ```
 
-As a reminder the ```.``` command means "here". So ```lab_4/.``` means "here in the lab 4 folder. 
+Remember that Lab5 is the PacBio reads of a different genome. We are annotating our yeast genome now!!
+As a reminder the ```.``` command means "here". So ```lab_6/.``` means "here in the lab 4 folder. 
 
 
 
@@ -74,7 +75,7 @@ Now we need to make sure that we have the right database
 ```
 cd .
 cp -r /projects/class/binf3101_001/.RepeatMaskerCache/ .
-cd lab_4
+cd lab_6
 ```
 
 ### Step 2b: Run repeatmasker
@@ -163,7 +164,7 @@ Top copy the slurm script into your lab_4 directory.
 
 ```bash
 
-cd lab_4
+cd lab_6
 
 cp /projects/class/binf3101_001/braker.slurm .
 ```
