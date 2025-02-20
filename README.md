@@ -70,11 +70,9 @@ We will be using a software called repeatmasker which is already installed on th
 module load repeatmasker
 ```
 
-Now we need to make sure that we have the right database
+Now we need to make sure that we are in the right folder.
 
 ```
-cd .
-cp -r /projects/class/binf3101_001/.RepeatMaskerCache/ .
 cd lab_6
 ```
 
@@ -138,7 +136,7 @@ BRAKER calls a program called genemark. We need to tell genemark where to look f
 #go to your home directory
 cd
 #enter this command exactly
-cp /projects/class/binf3101_001/.gm_key $HOME/.gm_key
+cp $GM_HOME/gm_key $HOME/.gm_key
 ```
 
 ### Step 3c - Setup Augustus
@@ -160,13 +158,76 @@ cp -ar $AUGUSTUS/config $HOME/augustus_config
 
 ### Step 4a - Copy slurm script
 
-Top copy the slurm script into your lab_4 directory. 
+Edit the following slurm script into your lab_6 directory. 
 
 ```bash
 
-cd lab_6
+#! /bin/bash
 
-cp /projects/class/binf3101_001/braker.slurm .
+### BRAKER docs recommend 8 cores max
+#SBATCH --partition=Centaurus
+#SBATCH --job-name=braker_job
+#SBATCH --time=24:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=8G
+
+echo "======================================================"
+echo "Start Time : $(date)"
+echo "Submit Dir : $SLURM_SUBMIT_DIR"
+echo "Job ID     : $SLURM_JOBID"
+echo "Job Name   : $SLURM_JOB_NAME"
+echo "Node List  : $SLURM_JOB_NODELIST"
+echo "Num Tasks  : $SLURM_NTASKS"
+echo "Num Nodes  : $SLURM_NNODES"
+echo "CPUs/Node  : $SLURM_CPUS_ON_NODE"
+echo "======================================================"
+echo ""
+
+host=`hostname`
+### prereq modules
+### choose a version of BRAKER2
+module load braker
+module list 2>&1
+echo ""
+
+
+####STUDENTS - ENTER YOUR NUMBER HERE
+#### Do not remove the quotes. Replace XXXXXXXX with your SRR number.
+#### Do not inlcude the SRR 
+
+SRR="XXXXXXXX"
+
+
+### END STUDENT AREA
+
+
+
+### for genemark to work you must have a "genemark key" in your home
+### dir, created by this cmd: cp $GM_HOME/gm_key $HOME/.gm_key
+
+### for augustus to work, you must have a writeable "AUGUSTUS_CONFIG_PATH"
+### this example uses: $HOME/augustus_config, created by this cmd:
+### cp -ar $AUGUSTUS/config $HOME/augustus_config
+
+### this submit script was developed using the
+### example data here: ${BRAKER}/BRAKER2examples
+
+CMD="braker.pl --gff3 --fungus --AUGUSTUS_CONFIG_PATH=${HOME}/augustus_config --genome=${SLURM_SUBMIT_DIR}/SRR$SRR-contigs.v2.fa.masked --prot_seq=/projects/class/binf3101_001/saccharomycetes.fasta --DIAMOND_PATH=/apps/pkg/conda/envs/braker-3.0.7/bin/diamond"
+
+
+cd ${SLURM_SUBMIT_DIR}
+echo "Command    : ${CMD}"
+echo ""
+
+$CMD
+
+echo ""
+echo "======================================================"
+echo "End Time   : `date`"
+echo "======================================================"
+
 ```
 
 
@@ -174,7 +235,7 @@ cp /projects/class/binf3101_001/braker.slurm .
 
 There is one section of the script you need to edit
 
-![image]https://github.com/user-attachments/assets/c7a3bd20-b4a1-4664-9c36-901a077e429d)
+<img width="592" alt="Screenshot 2025-02-20 at 12 59 36 PM" src="https://github.com/user-attachments/assets/4d5dfc69-9c71-4f0e-86f1-935b51b15692" />
 
 
 In the line where it says SRR="1234556" you should change it to your SRR number. 
