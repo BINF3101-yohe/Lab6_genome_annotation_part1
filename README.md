@@ -41,7 +41,7 @@ Yeast genomes are typically compact and the genes contain few introns. We need t
 
 ## Step 1: Set up your Lab 4 Folder
 
-From your home directory (/users/username) create a new folder called lab_4
+From your home directory (/users/username) create a new folder called lab_6
 
 ```bash
 mkdir lab_6
