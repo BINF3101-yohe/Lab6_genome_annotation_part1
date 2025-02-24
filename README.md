@@ -1,4 +1,4 @@
-# Lab4_Genome_Annotation
+# Lab6_Genome_Annotation_part1
 
 ## Outline
 
