@@ -300,7 +300,7 @@ Our analyses will run for a long time. To prepare us for next lab let's answer s
 
 The version of braker we are using only outputs gff or gff3 files. We have it set to generate our gff3 files and it will be named **"braker.gff3**
 
-Take a look at this example of gff3 format https://learn.gencore.bio.nyu.edu/ngs-file-formats/gff3-format/ 
+Take a look at this example of gff3 format[ https://www.reneshbedre.com/blog/gffgtf.html ](url)
 
 # LQ 4 
 How many required fields are there in gff3 format?
