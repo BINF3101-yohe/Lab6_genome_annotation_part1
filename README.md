@@ -264,8 +264,8 @@ This will take a long time to run, so let's look at what's happening
 ```bash
 squeue -u username
 ```
+![Screenshot 2025-02-25 at 1 41 20 PM](https://github.com/user-attachments/assets/955538db-4929-44ec-8017-2d3e01f050ef)
 
-![image](https://github.com/BINF-3101/Lab4_Genome_Annotation/assets/47755288/ea7927d8-c920-4d5e-ab6f-757932cae2f8)
 
 You should see your job running with the amount of time it's been running. 
 
